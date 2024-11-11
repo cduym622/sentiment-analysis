@@ -15,7 +15,7 @@ y = label_encoder.fit_transform(trainingdata['Sentiment1'])
 X = trainingdata['SentimentText']
 testid = trainingdata['TonyID']
 
-vectorizer = TfidfVectorizer(lowercase=True, stop_words='english')
+vectorizer = TfidfVectorizer(lowercase=True)
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size= 0.20, random_state=42)
 

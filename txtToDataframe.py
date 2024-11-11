@@ -1,11 +1,11 @@
 import json
 
 # Path to the input and output files
-input_file = 'Training.txt'
-output_file = 'Training.json'
+input_file = 'test2_public.txt'
+output_file = 'test2_public.json'
 
 # Read the input file
-with open(input_file, 'r', encoding='utf-8') as file:
+with open(input_file, 'r', encoding='ISO-8859-1') as file:
     # Read the first line to get the column headers
     headers = file.readline().strip().split('\t')
     
