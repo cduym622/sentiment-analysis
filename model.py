@@ -6,10 +6,10 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.pipeline import make_pipeline
 from sklearn.metrics import accuracy_score
 
+label_encoder = LabelEncoder()
 
 trainingdata = pd.read_json('Training.json')
 trainingdata['SentimentText'] = trainingdata['SentimentText'].fillna('missing')
-label_encoder = LabelEncoder()
 
 y = label_encoder.fit_transform(trainingdata['Sentiment1'])
 X = trainingdata['SentimentText']

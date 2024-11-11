@@ -1,8 +1,9 @@
 import json
+import re
 
 # Path to the input and output files
-input_file = 'test2_public.txt'
-output_file = 'test2_public.json'
+input_file = 'Training.txt'
+output_file = 'Training.json'
 
 # Read the input file
 with open(input_file, 'r', encoding='ISO-8859-1') as file:
@@ -17,6 +18,8 @@ with open(input_file, 'r', encoding='ISO-8859-1') as file:
         # Split each line by tabs
         row = line.strip().split('\t')
         
+        row[1] = re.sub(r'@.*? ','', row[1])
+
         # Create a dictionary by zipping headers and row values
         entry = dict(zip(headers, row))
         
