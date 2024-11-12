@@ -2,8 +2,8 @@ import json
 import re
 
 # Path to the input and output files
-input_file = 'Training.txt'
-output_file = 'Training.json'
+input_file = 'test1_public.txt'
+output_file = 'test1_public.json'
 
 # Read the input file
 with open(input_file, 'r', encoding='ISO-8859-1') as file:
@@ -21,6 +21,10 @@ with open(input_file, 'r', encoding='ISO-8859-1') as file:
         if 2 < len(row):
 
             row[2] = re.sub(r'@.*? ','', row[2])
+        
+        if 1 < len(row) and 2 >= len(row):
+            row[1] = re.sub(r'@.*? ','', row[1])
+
 
         # Create a dictionary by zipping headers and row values
         entry = dict(zip(headers, row))
