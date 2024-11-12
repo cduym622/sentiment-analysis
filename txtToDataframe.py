@@ -18,7 +18,9 @@ with open(input_file, 'r', encoding='ISO-8859-1') as file:
         # Split each line by tabs
         row = line.strip().split('\t')
         
-        row[2] = re.sub(r'@.*? ','', row[2])
+        if 2 < len(row):
+
+            row[2] = re.sub(r'@.*? ','', row[2])
 
         # Create a dictionary by zipping headers and row values
         entry = dict(zip(headers, row))
