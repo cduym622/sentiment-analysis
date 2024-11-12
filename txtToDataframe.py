@@ -2,8 +2,8 @@ import json
 import re
 
 # Path to the input and output files
-input_file = 'test1_public.txt'
-output_file = 'test1_public.json'
+input_file = 'test2_public.txt'
+output_file = 'test2_public.json'
 
 # Read the input file
 with open(input_file, 'r', encoding='ISO-8859-1') as file:
