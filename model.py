@@ -21,18 +21,22 @@ vectorizer = TfidfVectorizer(lowercase=True)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size= 0.20, random_state=42)
 
 naivebayesmodel = make_pipeline(vectorizer, MultinomialNB())
-svmmodel = make_pipeline(vectorizer, svm.SVC(kernel='linear'))
+
 # Train the model
 naivebayesmodel.fit(X_train, y_train)
-svmmodel.fit(X_train, y_train)
+
 # Predict the labels for the test set
 nbpred = naivebayesmodel.predict(X_test)
-svmpred = svmmodel.predict(X_test)
+
  
 # Calculate the accuracy
 nbaccuracy = accuracy_score(y_test, nbpred)
 print(f'Accuracy: {nbaccuracy}')
 
+
+svmmodel = make_pipeline(vectorizer, svm.SVC(kernel='linear'))
+svmmodel.fit(X_train, y_train)
+svmpred = svmmodel.predict(X_test)
 svmaccuracy = accuracy_score(y_test, svmpred)
 print(f'Accuracy: {svmaccuracy}')
 
